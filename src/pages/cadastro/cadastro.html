@@ -1,0 +1,26 @@
+<ion-content padding>
+<form [formGroup]="cadastro" (ngSubmit)="postDados()">
+      <h2 class="TextCenter">Cadastro</h2>
+      <ion-list>        
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" name="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Senha</ion-label>
+            <ion-input type="password" name="senha" formControlName="senha"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Confirmar Senha</ion-label>
+            <ion-input type="password" name="senhaConf" formControlName="senhaConf"></ion-input>
+          </ion-item>
+          <br/>
+      </ion-list>
+          <ion-item>
+             <button [disabled]="cadastro.invalid" ion-button block color="secondary">Proximo</button>
+          </ion-item>
+    </form>
+          <ion-item>
+             <button ion-button block color="danger" (click)="backPage()">Cancelar</button>
+          </ion-item>
+</ion-content>

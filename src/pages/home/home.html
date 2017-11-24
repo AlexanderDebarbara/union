@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Feed de Noticias
+    </ion-title>   
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+       pullingIcon="arrow-dropdown"
+       pullingText="Pull to refresh"
+       refreshingSpinner="circles"
+       refreshingText="Carregando...">
+    </ion-refresher-content>
+ </ion-refresher> 
+  <ion-list>
+      <ion-card ion-item *ngFor="let feed of feeds" >
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="http://www.univag.com.br/storage/cache/default/400x250/news/__acd372841289b14dade72301f2b57ba64c8506ed__/logounivag.jpg">
+        </ion-avatar>
+        <h2>{{feed.Usuario.DadosUsuario.Nome}}</h2>
+        <p class="label-wrap-detail">{{feed.Titulo}}</p>
+      </ion-item>
+    
+      <img src="http://www.olhardireto.com.br/juridico/imgsite/noticias/Univag(4).jpg">
+    
+      <ion-card-content>
+        <p>
+          {{feed.Descricao}}
+        </p>
+        <p>
+          {{feed.Localizacao}}
+        </p>
+      </ion-card-content>
+    
+      <ion-row>        
+        <ion-col align-self-center text-center>
+          <ion-note>
+            {{feed.DataCadastro}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+</ion-content>
+

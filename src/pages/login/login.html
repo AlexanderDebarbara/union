@@ -1,0 +1,25 @@
+<ion-content padding>    
+    <form [formGroup]="login" (ngSubmit)="postDados()">
+      <div>
+      <img class="ImageCenter" src="https://lh3.googleusercontent.com/YxpCR-DV7SkS4oo9lAieEaiWzNL5a_3Wong0ekGTYeZqKfPex2B-cR5IVF2lAhNzsAZhsmSxIlinm3o2WGaWVeMiKlT8q-91iXQYppWiyocW2BsfA_YrLmEjMxLtW71ga8rxwfNElexGbc9WXHisoqpCszqT1X8cHVj88b2sIiDTCfX6lOrPFBBmjnO79JhLThGE2-T-i_KoaxlLqKz1sSPVTyrZFwit8n8U3QGT9zJ2H-6fE9y-nTCy4BvYbDLEbNdtdq9QuWXXimiWhV79H5wBsilU9AK5v-8-BDG128AlbH-9wPCa4KDXVF437c4hFrprkyiJVT82W_VbQQ8pVkYKFxUjSQA2epVdKTASWy8CxoZ2wdP-qr-XGNrgmLerRI0AGpRD8hCY6VeaNgySEZ4_Ph2az7MBxOvzJMIxAKb0WD7niJZQLV8y6dLoZgARuinVyizMdBw-sbpSgO9wE-fBAL2FqemKA2Z7TfUiYIeMq_kv9tiu-bISHu8ofByZcVQOIQDsrzEBtwtmw2zpACiwuuObIRFnus-GjqWtDxdqKXmQOrVDvsrPkyhlRN6CQ0qekccBd4LMM6g3CrBir986v_tQNXUDbA1qg0P2CdP5xADJz0xqkL9ODpQj5z5_DAFVUpH89XaHDpytQ9k7jtnRvleiMEmHi4o=w236-h231-no">
+      <h2 class="TextCenter">Entrar</h2>
+      </div>
+      <ion-list >
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" name="nome" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Senha</ion-label>
+            <ion-input type="password" name="senha" formControlName="senha"></ion-input>
+          </ion-item>
+          <br/>
+      </ion-list>
+          <ion-item>
+             <button [disabled]="login.invalid" ion-button block color="secondary">Entrar</button>
+          </ion-item>
+    </form>
+    <ion-item>
+       <button ion-button block (click)="getPageCadastro()">Cadastrar</button>
+    </ion-item>
+</ion-content>

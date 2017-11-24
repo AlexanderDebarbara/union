@@ -1,0 +1,13 @@
+<ion-menu [content]="menu">
+    <ion-content>
+        <ion-list >
+            <button ion-item menuClose>Menu</button>
+            <button ion-item menuClose (click)='goPage("Home")'>Home</button>
+            <button ion-item menuClose (click)='goPage("Perfil")'>Perfil</button>
+            <button ion-item menuClose (click)='goPage("CadastroNoticias")'>Cadastrar Noticia</button>
+            <button ion-item menuClose (click)='logout()'>Sair</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #menu [root]="rootPage"></ion-nav>

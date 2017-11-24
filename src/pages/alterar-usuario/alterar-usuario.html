@@ -1,0 +1,28 @@
+<ion-content padding>
+<form [formGroup]="cadastro" (ngSubmit)="postDados()">
+      <h2 class="TextCenter">Cadastro</h2>
+      <ion-list>
+          <ion-item>
+            <ion-label floating>Nome</ion-label>
+            <ion-input type="text" name="Nome" formControlName="nome"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Sobrenome</ion-label>
+            <ion-input type="text" name="sobrenome" formControlName="sobrenome"></ion-input>
+          </ion-item>
+          <br/>
+          <ion-item>
+            <ion-label>Genero</ion-label>
+            <ion-select formControlName="genero">
+              <ion-option value="F">Feminino</ion-option>
+              <ion-option value="M">Masculino</ion-option>              
+              <ion-option value="O">Outro</ion-option>
+            </ion-select>
+          </ion-item>
+          <br/>
+      </ion-list>
+          <ion-item>
+             <button [disabled]="cadastro.invalid" ion-button block color="secondary">Proximo</button>
+          </ion-item>
+    </form>
+</ion-content>
